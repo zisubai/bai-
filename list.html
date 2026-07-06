@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>细菌列表 · 细菌百科</title>
+    <meta name="description" content="细菌百科完整菌类列表与分类检索页面。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <nav class="nav">
+        <a class="brand" href="index.html">🦠 细菌百科</a>
+        <div class="nav-links">
+          <a href="index.html">返回首页</a>
+        </div>
+      </nav>
+
+      <div class="hero-content hero-content-small">
+        <div>
+          <p class="eyebrow">完整菌类列表</p>
+          <h1>探索细菌与微生物的完整分类</h1>
+          <p class="hero-text">
+            在这里查看所有细菌条目，支持关键词搜索与分类筛选，方便你继续了解不同菌类的用途和特点。
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section search-main">
+        <div class="section-title">
+          <p class="eyebrow">细菌检索</p>
+          <h2>完整菌类列表</h2>
+        </div>
+
+        <div class="toolbar">
+          <input id="searchInput" type="text" placeholder="输入细菌名、形态或用途..." />
+          <div id="filterButtons" class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="益生">益生</button>
+            <button class="filter-btn" data-filter="致病">致病</button>
+            <button class="filter-btn" data-filter="生态">生态</button>
+            <button class="filter-btn" data-filter="工业">工业</button>
+          </div>
+        </div>
+
+        <div id="cardGrid" class="card-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 细菌百科 · 用一页内容，打开更多微生物知识</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
