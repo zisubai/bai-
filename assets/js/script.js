@@ -139,7 +139,7 @@ if (searchForm && searchInput) {
     if (keyword) {
       params.set('q', keyword);
     }
-    window.location.href = `list.html?${params.toString()}`;
+    window.location.href = `pages/list.html?${params.toString()}`;
   });
 }
 
