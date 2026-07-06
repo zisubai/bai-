@@ -1,20 +1,27 @@
-# 第四天练习：输入细菌名，输出一句介绍
+# 第六天演示：输入细菌名，输出资料卡片
 
 # 今天要练习：
-# 1. input() 读取用户输入
-# 2. if 判断用户输入的内容
-# 3. print() 输出介绍
-# 4. 可选：把介绍逻辑放进函数 def 里
+# 1. import 复用另一个文件里的数据
+# 2. for 循环查找列表里的字典
+# 3. 用 if 判断用户输入的名字
+# 4. 把查询结果打印成资料卡片
 
-# TODO:
-# 第一步：用 input() 问用户想查询哪种细菌
-# 第二步：如果用户输入“大肠杆菌”，输出一句介绍
-# 第三步：如果用户输入“枯草芽孢杆菌”，输出一句介绍
-# 第四步：如果都不是，输出“暂时没有这种细菌的信息”
+from bacteria_data import bacteria_list
+
+
 name = input("请输入你想查询的细菌名：")
-if name == "大肠杆菌":
-    print("大肠杆菌是一种常见的革兰氏阴性菌，广泛存在于人和动物的肠道中。")
-elif name == "枯草芽孢杆菌":
-    print("枯草芽孢杆菌是一种革兰氏阳性菌，能够形成耐热的芽孢，常用于生物农药和发酵工业。")
+found = None
+
+for bacteria in bacteria_list:
+    if bacteria["name_cn"] == name or bacteria["name_latin"] == name:
+        found = bacteria
+
+if found:
+    print("名称：" + found["name_cn"])
+    print("拉丁学名：" + found["name_latin"])
+    print("革兰氏染色：" + found["gram"])
+    print("形状：" + found["shape"])
+    print("栖息地：" + found["habitat"])
+    print("是否致病：" + found["pathogenic"])
 else:
     print("暂时没有这种细菌的信息。")
